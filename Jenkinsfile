@@ -7,12 +7,12 @@ node {
 	}
 	
 	stage('Build image'){
-		app = docker.build('arsalanahmed29/example-app')
+		app = docker.build("ArsalanAhmed2912/example-app")
 	}
 
 	stage('Push image'){
-		docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials'){
-		app.push('latest')
+		docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+		app.push("latest")
 		}
 	}
 }
